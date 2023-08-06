@@ -34,11 +34,7 @@ func main() {
 	e := echo.New()
 
 	e.POST("/signup", controller.HandleSignUp(client))
-<<<<<<< HEAD
-    e.POST("/login", controller.HandleLogin(client))
-=======
 	e.POST("/login", controller.HandleLogin(client))
->>>>>>> af2d8e139d0ff5b1a6aad10adac53bb4985eff61
 	// Start the server.
 	e.Logger.Fatal(e.Start(":8080"))
 
