@@ -6,7 +6,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/yashikajain0312/restroApp/server/ent"
+	"github.com/diptanshug/RentYourDress/server/ent"
 )
 
 // The UserFunc type is an adapter to allow the use of ordinary

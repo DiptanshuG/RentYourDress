@@ -4,11 +4,12 @@ import (
 	"context"
 	"log"
 
-	"github.com/yashikajain0312/restroApp/server/ent"
-
 	"entgo.io/ent/dialect"
 	"entgo.io/ent/dialect/sql"
+	controller "github.com/diptanshug/RentYourDress/server/controllers"
+	"github.com/diptanshug/RentYourDress/server/ent"
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/labstack/echo/v4"
 )
 
 func main() {
@@ -29,14 +30,11 @@ func main() {
 		log.Fatalf("failed creating schema: %v", err)
 	}
 
-	newUser, err := client.User.
-		Create().
-		SetName("John Doe").
-		SetAge(30).
-		Save(ctx)
-	if err != nil {
-		log.Fatalf("failed creating user: %v", err)
-	}
+	// Use the new HandleSignUp function from the controller package.
+	e := echo.New()
 
-	log.Printf("Created user: %v", newUser)
+	e.POST("/signup", controller.HandleSignUp(client))
+	// Start the server.
+	e.Logger.Fatal(e.Start(":8080"))
+
 }

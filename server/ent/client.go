@@ -8,12 +8,12 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/yashikajain0312/restroApp/server/ent/migrate"
+	"github.com/diptanshug/RentYourDress/server/ent/migrate"
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect"
 	"entgo.io/ent/dialect/sql"
-	"github.com/yashikajain0312/restroApp/server/ent/user"
+	"github.com/diptanshug/RentYourDress/server/ent/user"
 )
 
 // Client is the client that holds all ent builders.

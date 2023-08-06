@@ -9,7 +9,7 @@ import (
 
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/yashikajain0312/restroApp/server/ent/user"
+	"github.com/diptanshug/RentYourDress/server/ent/user"
 )
 
 // UserCreate is the builder for creating a User entity.
@@ -25,9 +25,15 @@ func (uc *UserCreate) SetName(s string) *UserCreate {
 	return uc
 }
 
-// SetAge sets the "age" field.
-func (uc *UserCreate) SetAge(i int) *UserCreate {
-	uc.mutation.SetAge(i)
+// SetEmail sets the "email" field.
+func (uc *UserCreate) SetEmail(s string) *UserCreate {
+	uc.mutation.SetEmail(s)
+	return uc
+}
+
+// SetPassword sets the "password" field.
+func (uc *UserCreate) SetPassword(s string) *UserCreate {
+	uc.mutation.SetPassword(s)
 	return uc
 }
 
@@ -68,13 +74,11 @@ func (uc *UserCreate) check() error {
 	if _, ok := uc.mutation.Name(); !ok {
 		return &ValidationError{Name: "name", err: errors.New(`ent: missing required field "User.name"`)}
 	}
-	if _, ok := uc.mutation.Age(); !ok {
-		return &ValidationError{Name: "age", err: errors.New(`ent: missing required field "User.age"`)}
+	if _, ok := uc.mutation.Email(); !ok {
+		return &ValidationError{Name: "email", err: errors.New(`ent: missing required field "User.email"`)}
 	}
-	if v, ok := uc.mutation.Age(); ok {
-		if err := user.AgeValidator(v); err != nil {
-			return &ValidationError{Name: "age", err: fmt.Errorf(`ent: validator failed for field "User.age": %w`, err)}
-		}
+	if _, ok := uc.mutation.Password(); !ok {
+		return &ValidationError{Name: "password", err: errors.New(`ent: missing required field "User.password"`)}
 	}
 	return nil
 }
@@ -106,9 +110,13 @@ func (uc *UserCreate) createSpec() (*User, *sqlgraph.CreateSpec) {
 		_spec.SetField(user.FieldName, field.TypeString, value)
 		_node.Name = value
 	}
-	if value, ok := uc.mutation.Age(); ok {
-		_spec.SetField(user.FieldAge, field.TypeInt, value)
-		_node.Age = value
+	if value, ok := uc.mutation.Email(); ok {
+		_spec.SetField(user.FieldEmail, field.TypeString, value)
+		_node.Email = value
+	}
+	if value, ok := uc.mutation.Password(); ok {
+		_spec.SetField(user.FieldPassword, field.TypeString, value)
+		_node.Password = value
 	}
 	return _node, _spec
 }

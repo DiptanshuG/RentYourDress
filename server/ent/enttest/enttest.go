@@ -5,12 +5,12 @@ package enttest
 import (
 	"context"
 
-	"github.com/yashikajain0312/restroApp/server/ent"
+	"github.com/diptanshug/RentYourDress/server/ent"
 	// required by schema hooks.
-	_ "github.com/yashikajain0312/restroApp/server/ent/runtime"
+	_ "github.com/diptanshug/RentYourDress/server/ent/runtime"
 
 	"entgo.io/ent/dialect/sql/schema"
-	"github.com/yashikajain0312/restroApp/server/ent/migrate"
+	"github.com/diptanshug/RentYourDress/server/ent/migrate"
 )
 
 type (

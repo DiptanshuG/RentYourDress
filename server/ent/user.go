@@ -8,7 +8,7 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/yashikajain0312/restroApp/server/ent/user"
+	"github.com/diptanshug/RentYourDress/server/ent/user"
 )
 
 // User is the model entity for the User schema.
@@ -18,8 +18,10 @@ type User struct {
 	ID int `json:"id,omitempty"`
 	// Name holds the value of the "name" field.
 	Name string `json:"name,omitempty"`
-	// Age holds the value of the "age" field.
-	Age          int `json:"age,omitempty"`
+	// Email holds the value of the "email" field.
+	Email string `json:"email,omitempty"`
+	// Password holds the value of the "password" field.
+	Password     string `json:"password,omitempty"`
 	selectValues sql.SelectValues
 }
 
@@ -28,9 +30,9 @@ func (*User) scanValues(columns []string) ([]any, error) {
 	values := make([]any, len(columns))
 	for i := range columns {
 		switch columns[i] {
-		case user.FieldID, user.FieldAge:
+		case user.FieldID:
 			values[i] = new(sql.NullInt64)
-		case user.FieldName:
+		case user.FieldName, user.FieldEmail, user.FieldPassword:
 			values[i] = new(sql.NullString)
 		default:
 			values[i] = new(sql.UnknownType)
@@ -59,11 +61,17 @@ func (u *User) assignValues(columns []string, values []any) error {
 			} else if value.Valid {
 				u.Name = value.String
 			}
-		case user.FieldAge:
-			if value, ok := values[i].(*sql.NullInt64); !ok {
-				return fmt.Errorf("unexpected type %T for field age", values[i])
+		case user.FieldEmail:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field email", values[i])
 			} else if value.Valid {
-				u.Age = int(value.Int64)
+				u.Email = value.String
+			}
+		case user.FieldPassword:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field password", values[i])
+			} else if value.Valid {
+				u.Password = value.String
 			}
 		default:
 			u.selectValues.Set(columns[i], values[i])
@@ -104,8 +112,11 @@ func (u *User) String() string {
 	builder.WriteString("name=")
 	builder.WriteString(u.Name)
 	builder.WriteString(", ")
-	builder.WriteString("age=")
-	builder.WriteString(fmt.Sprintf("%v", u.Age))
+	builder.WriteString("email=")
+	builder.WriteString(u.Email)
+	builder.WriteString(", ")
+	builder.WriteString("password=")
+	builder.WriteString(u.Password)
 	builder.WriteByte(')')
 	return builder.String()
 }

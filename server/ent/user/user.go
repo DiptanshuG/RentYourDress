@@ -13,8 +13,10 @@ const (
 	FieldID = "id"
 	// FieldName holds the string denoting the name field in the database.
 	FieldName = "name"
-	// FieldAge holds the string denoting the age field in the database.
-	FieldAge = "age"
+	// FieldEmail holds the string denoting the email field in the database.
+	FieldEmail = "email"
+	// FieldPassword holds the string denoting the password field in the database.
+	FieldPassword = "password"
 	// Table holds the table name of the user in the database.
 	Table = "users"
 )
@@ -23,7 +25,8 @@ const (
 var Columns = []string{
 	FieldID,
 	FieldName,
-	FieldAge,
+	FieldEmail,
+	FieldPassword,
 }
 
 // ValidColumn reports if the column name is valid (part of the table columns).
@@ -35,11 +38,6 @@ func ValidColumn(column string) bool {
 	}
 	return false
 }
-
-var (
-	// AgeValidator is a validator for the "age" field. It is called by the builders before save.
-	AgeValidator func(int) error
-)
 
 // OrderOption defines the ordering options for the User queries.
 type OrderOption func(*sql.Selector)
@@ -54,7 +52,12 @@ func ByName(opts ...sql.OrderTermOption) OrderOption {
 	return sql.OrderByField(FieldName, opts...).ToFunc()
 }
 
-// ByAge orders the results by the age field.
-func ByAge(opts ...sql.OrderTermOption) OrderOption {
-	return sql.OrderByField(FieldAge, opts...).ToFunc()
+// ByEmail orders the results by the email field.
+func ByEmail(opts ...sql.OrderTermOption) OrderOption {
+	return sql.OrderByField(FieldEmail, opts...).ToFunc()
+}
+
+// ByPassword orders the results by the password field.
+func ByPassword(opts ...sql.OrderTermOption) OrderOption {
+	return sql.OrderByField(FieldPassword, opts...).ToFunc()
 }
