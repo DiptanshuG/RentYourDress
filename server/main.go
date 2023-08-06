@@ -34,6 +34,7 @@ func main() {
 	e := echo.New()
 
 	e.POST("/signup", controller.HandleSignUp(client))
+	e.POST("/login", controller.HandleLogin(client))
 	// Start the server.
 	e.Logger.Fatal(e.Start(":8080"))
 
