@@ -1,20 +1,19 @@
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Breadcrumb from 'react-bootstrap/Breadcrumb';
+// import NotFound from './NotFound';
 
-function App() {
+const App = () => {
   return (
-    <div className="App text-danger">
-     diptanshu
-     <Breadcrumb>
-      <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-      <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
-        Library
-      </Breadcrumb.Item>
-      <Breadcrumb.Item active>Data</Breadcrumb.Item>
-    </Breadcrumb>
-    </div>
+    <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          {/* <Route component={NotFound} /> */}
+        </Routes>
+     
+    </Router>
   );
-}
+};
 
 export default App;
