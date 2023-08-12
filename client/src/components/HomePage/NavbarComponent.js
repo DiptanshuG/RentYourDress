@@ -3,8 +3,30 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 import { FaUser, FaSearch, FaShoppingCart } from 'react-icons/fa';
 import '../../styles/NavbarComponent.css';
 import log from "../../assets/images/logo.png"
+import Categories from './Categories';
 
 const NavbarComponent = () => {
+    const womenItemsType = [
+        "Bridal Lehenga",
+        "Designer Lehenga",
+        "Gown",
+      ];
+
+      const occasionWear = [
+        "Wedding",
+        "Pre-Wedding Shoot",
+        "Haldi",
+        "Mehndi",
+        "Sangeet",
+      ];
+
+      const menItemsType = [
+        "Sherwani",
+        "Suit",
+        "Blazer",
+        "Taxedo"
+      ];
+      
     return (
         <Navbar  variant="dark" expand="lg" className="custom-navbar">
             <Container>
@@ -20,10 +42,8 @@ const NavbarComponent = () => {
                 <Navbar.Toggle aria-controls="navbar-nav" />
                 <Navbar.Collapse id="navbar-nav">
                     <Nav className="mx-auto">
-                        <Nav.Link href="#" className="mx-3">Menu 1</Nav.Link>
-                        <Nav.Link href="#" className="mx-3">Menu 2</Nav.Link>
-                        <Nav.Link href="#" className="mx-3">Menu 3</Nav.Link>
-                        <Nav.Link href="#" className="mx-3">Menu 4</Nav.Link>
+                    <Categories title="Women's Wear" id="women-dropdown" womenItemsByType={womenItemsType} itemsByOccasion={occasionWear}/>
+                        <Categories title="Men's Wear" id="men-dropdown" menItemsByType={menItemsType} itemsByOccasion={occasionWear}/>
                     </Nav>
                     <Nav>
                         <Nav.Link href="#" className="mr-2">

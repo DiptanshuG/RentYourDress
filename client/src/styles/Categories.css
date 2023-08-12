@@ -1,0 +1,10 @@
+/* Custom CSS for dropdown */
+.custom-dropdown-item {
+    transition: background-color 0.2s, color 0.2s;
+  }
+  
+  .custom-dropdown-item:hover {
+    background-color: black;
+    color: white;
+  }
+  
