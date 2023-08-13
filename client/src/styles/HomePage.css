@@ -39,7 +39,7 @@
   }
 
   .slider-container {
-    width: 100%; /* Take full width in column layout */
+    width: 87vw !important; /* Take full width in column layout */
     max-width: none; /* Reset max-width for full width */
   }
 }
