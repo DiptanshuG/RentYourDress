@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { FaUser, FaSearch, FaShoppingCart } from "react-icons/fa";
 import log from "../../assets/images/logo2.png";
@@ -8,6 +8,8 @@ import "../../styles/NavbarComponent.css";
 const NavbarComponent = () => {
   const [isWomenDropdownOpen, setWomenDropdownOpen] = useState(false);
   const [isMenDropdownOpen, setMenDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
 
   const occasionWear = ["Wedding", "Pre-Wedding Shoot", "Haldi", "Mehndi", "Sangeet"];
 
@@ -18,6 +20,26 @@ const NavbarComponent = () => {
     setWomenDropdownOpen(dropdown === "women");
     setMenDropdownOpen(dropdown === "men");
   };
+
+  const closeDropdowns = () => {
+    setWomenDropdownOpen(false);
+    setMenDropdownOpen(false);
+  };
+
+  const handleOutsideClick = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setWomenDropdownOpen(false);
+      setMenDropdownOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
 
   return (
     <Navbar variant="dark" expand="lg" className="custom-navbar">
@@ -33,7 +55,7 @@ const NavbarComponent = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
-          <Nav className="mx-auto">
+          <Nav className="mx-auto" ref={dropdownRef}>
             <Categories
               title="Women's Wear"
               id="women-dropdown"
@@ -41,6 +63,9 @@ const NavbarComponent = () => {
               itemsByOccasion={occasionWear}
               onMouseEnter={() => handleDropdown("women")}
               show={isWomenDropdownOpen}
+              ref={dropdownRef}
+
+
             />
             <Categories
               title="Men's Wear"
@@ -49,6 +74,9 @@ const NavbarComponent = () => {
               itemsByOccasion={occasionWear}
               onMouseEnter={() => handleDropdown("men")}
               show={isMenDropdownOpen}
+              ref={dropdownRef}
+
+
             />
             <Nav.Link href="#">Customer Stories</Nav.Link>
           </Nav>
