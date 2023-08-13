@@ -5,7 +5,8 @@
   align-items: center;
   min-height: 100vh;
   position: relative;
-
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the background image */
   background-image: url(https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk1Mi1iYi0xMjEta2x4aDd1dXIuanBn.jpg);
 }
 .hero-section::before {
