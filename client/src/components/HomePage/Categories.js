@@ -18,35 +18,21 @@ function Categories(props) {
           <div className="col">
             <div className="dropdown-category fw-bold">RENT BY TYPE</div>
             <div className="dropdown-list">
-              <NavDropdown.Item className="custom-dropdown-item" href="#">
-                Bridal Lehenga
-              </NavDropdown.Item>
-              <NavDropdown.Item className="custom-dropdown-item" href="#">
-                Designer Lehenga
-              </NavDropdown.Item>
-              <NavDropdown.Item className="custom-dropdown-item" href="#">
-                Gown
-              </NavDropdown.Item>
-            </div>
+            {props.itemsByType.map((item, index) => (
+                <NavDropdown.Item key={index} href="#" className="custom-dropdown-item">
+                  {item}
+                </NavDropdown.Item>
+              ))}
+            </div> 
           </div>
           <div className="col">
             <div className="dropdown-category fw-bold">RENT BY OCCASION</div>
             <div className="dropdown-list">
-              <NavDropdown.Item className="custom-dropdown-item" href="#">
-                Wedding
-              </NavDropdown.Item>
-              <NavDropdown.Item className="custom-dropdown-item" href="#">
-                Pre-Wedding Shoot
-              </NavDropdown.Item>
-              <NavDropdown.Item className="custom-dropdown-item" href="#">
-                Haldi
-              </NavDropdown.Item>
-              <NavDropdown.Item className="custom-dropdown-item" href="#">
-                Mehndi
-              </NavDropdown.Item>
-              <NavDropdown.Item className="custom-dropdown-item" href="#">
-                Sangeet
-              </NavDropdown.Item>
+            {props.itemsByOccasion.map((item, index) => (
+                <NavDropdown.Item key={index} href="#" className="custom-dropdown-item">
+                  {item}
+                </NavDropdown.Item>
+              ))}
             </div>
           </div>
         </div>
