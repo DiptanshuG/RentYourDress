@@ -1,7 +1,7 @@
 /* NavbarComponent.css */
 .custom-navbar {
     height: 80px;
-    background-color: #1d617c; 
+  background-color: rgb(234, 236, 142);
 }
 
 .logo-img {
@@ -13,5 +13,16 @@
 .nav-icon {
     font-size: 2.2rem; /* Adjust the font-size as needed */
     margin: 0 10px;
-    color: white;
+    color: rgb(74, 62, 62);
+}
+
+.custom-nav-link {
+  color: black; /* Default text color */
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.custom-nav-link:hover {
+  background-color: transparent; /* Background color on hover */
+  color: rgb(24, 21, 21); /* Text color on hover */
+  transform: scale(1.40) translateY(-4px); /* Popup effect on hover */
 }

@@ -1,10 +1,11 @@
-/* Custom CSS for dropdown */
+/* Styling for the custom dropdown items */
 .custom-dropdown-item {
-    transition: background-color 0.2s, color 0.2s;
-  }
-  
-  .custom-dropdown-item:hover {
-    background-color: black;
-    color: white;
-  }
-  
+  color: black; /* Default text color */
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.custom-dropdown-item:hover {
+  background-color: black; /* Background color on hover */
+  color: white; /* Text color on hover */
+  transform: scale(1.05) translateY(-5px); /* Popup effect on hover */
+}

@@ -1,0 +1,16 @@
+/* HomePage.css */
+.hero-section {
+    width: 100%;
+    height: 100vh; /* Set the height as needed */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .text-container {
+    flex: 1;
+    padding-left: 570px;
+    text-align: center;
+  }
