@@ -1,11 +1,19 @@
-/* Styling for the custom dropdown items */
+/* Default styling for dropdown items */
 .custom-dropdown-item {
-  color: black; /* Default text color */
-  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+  color: black !important;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
+/* Hover effect for dropdown items */
 .custom-dropdown-item:hover {
-  background-color: black; /* Background color on hover */
-  color: white; /* Text color on hover */
-  transform: scale(1.05) translateY(-5px); /* Popup effect on hover */
+  background-color: green !important; /* Background color on hover */
+  color: red !important; /* Text color on hover */
+  transform: scale(1.05) translateY(-3px) !important; /* Slight popup effect on hover */
+}
+.dropdown-menu.show {
+  padding: 10px;
+}
+/* Open the dropdown on hover */
+.categories-dropdown:hover .dropdown-menu {
+  display: block;
 }

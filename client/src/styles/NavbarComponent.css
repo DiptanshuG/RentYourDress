@@ -1,28 +1,80 @@
 /* NavbarComponent.css */
+
+/* Colors */
+:root {
+  --primary-bg-color: rgb(234, 236, 142);
+  --icon-color: rgb(74, 62, 62);
+  --link-default-color: black;
+  --link-hover-color: rgb(24, 21, 21);
+  --accent-color: #ff9900;
+}
+
+/* Navbar */
 .custom-navbar {
-    height: 80px;
-  background-color: rgb(234, 236, 142);
+  height: 80px;
+  background-color: var(--primary-bg-color);
 }
 
+/* Logo */
 .logo-img {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
-
+/* Nav Icons */
 .nav-icon {
-    font-size: 2.2rem; /* Adjust the font-size as needed */
-    margin: 0 10px;
-    color: rgb(74, 62, 62);
+  font-size: 2.2rem; /* Adjust the font-size as needed */
+  margin: 0 10px;
+  color: var(--icon-color);
 }
 
+/* Custom Nav Link */
 .custom-nav-link {
-  color: black; /* Default text color */
+  color: var(--link-default-color); /* Default text color */
   transition: background-color 0.2s, color 0.2s, transform 0.2s;
 }
 
+.custom-dropdown-item:hover {
+  background-color: var(
+    --primary-bg-color
+  ) !important; /* Background color on hover */
+  color: var(--accent-color) !important; /* Text color on hover */
+  transform: scale(1.4) translateY(-4px); /* Popup effect on hover */
+}
+
+/* Additional Nav Link Styles */
+.nav-link {
+  color: var(--accent-color) !important; /* Replace with your desired color */
+  /* Additional styles if needed */
+}
+
+.dropdown-category {
+  color: #471b1b !important ; /* Set your desired color */
+  /* Additional styles if needed */
+}
 .custom-nav-link:hover {
-  background-color: transparent; /* Background color on hover */
-  color: rgb(24, 21, 21); /* Text color on hover */
-  transform: scale(1.40) translateY(-4px); /* Popup effect on hover */
+  animation: shiver 0.3s infinite linear, increaseSize 0.2s forwards;
+}
+
+@keyframes shiver {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25%,
+  75% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes increaseSize {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
 }

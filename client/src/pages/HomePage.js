@@ -6,19 +6,22 @@ import { Button } from "react-bootstrap";
 const HomePage = () => {
   return (
     <div className="hero-section">
-      <div className="slider-container">
-        <ImageSlider />
-      </div>
-      <div className="text-container">
-        <h2>Custom – Character – Class.</h2>
-        <p>
-          Fashion is like eating, you shouldn't stick to the same menu.
-        </p>
-        <p> Don’t be
-          into trends. Don’t make fashion own you, but you decide what you are,
-          what you want to express by the way you dress and the way you live.</p>
-        <Button variant="primary">Rent Now</Button>
-      </div>
+      <section>
+        <div className="slider-container">
+          <ImageSlider />
+        </div>
+        <div className="text-container">
+          <h2>Custom – Character – Class.</h2>
+          <p>
+            Fashion is like eating, you shouldn't stick to the same menu.
+          </p>
+          <p> Don’t be
+            into trends. Don’t make fashion own you, but you decide what you are,
+            what you want to express by the way you dress and the way you live.</p>
+          <Button variant="primary">Rent Now</Button>
+        </div>
+      </section>
+
     </div>
   );
 };
