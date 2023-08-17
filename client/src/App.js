@@ -5,8 +5,12 @@ import Layout from './components/HomePage/Layout';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import NotFound from './NotFound';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 const App = () => {
+  AOS.init();
+
   return (
     <Router>
           <Layout>

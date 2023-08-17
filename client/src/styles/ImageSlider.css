@@ -1,9 +1,9 @@
 /* Custom CSS for the image slider */
 .slider-container {
-  width: 40vw; /* Adjust the width as needed */
+  width: 140vw; /* Adjust the width as needed */
   max-width: 800px; /* Set a maximum width to avoid overstretching */
-  height: 300px; /* Set the desired height */
-  display: flex;
+  height: 500px; /* Set the desired height */
+  display: table-cell;
   align-items: center;
   justify-content: center; /* Center the slider horizontally */
   overflow: hidden; /* Hide overflowing content */

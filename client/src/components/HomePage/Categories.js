@@ -13,7 +13,6 @@ function Categories(props) {
       className="categories-dropdown"
       show={show}
       onMouseEnter={onMouseEnter}
-
     >
       <div className="dropdown-menu-end">
         <div className="row">
@@ -48,7 +47,6 @@ Categories.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   show: PropTypes.bool.isRequired,
-
   onMouseEnter: PropTypes.func.isRequired,
   itemsByType: PropTypes.arrayOf(PropTypes.string).isRequired,
   itemsByOccasion: PropTypes.arrayOf(PropTypes.string).isRequired,

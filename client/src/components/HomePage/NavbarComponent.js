@@ -64,8 +64,6 @@ const NavbarComponent = () => {
               onMouseEnter={() => handleDropdown("women")}
               show={isWomenDropdownOpen}
               ref={dropdownRef}
-
-
             />
             <Categories
               title="Men's Wear"
@@ -75,8 +73,6 @@ const NavbarComponent = () => {
               onMouseEnter={() => handleDropdown("men")}
               show={isMenDropdownOpen}
               ref={dropdownRef}
-
-
             />
             <Nav.Link href="#">Customer Stories</Nav.Link>
           </Nav>

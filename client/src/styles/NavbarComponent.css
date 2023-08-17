@@ -2,18 +2,17 @@
 
 /* Colors */
 :root {
-  --primary-bg-color: rgb(234, 236, 142);
+  --primary-bg-color: rgb(238, 203, 222);
   --icon-color: rgb(74, 62, 62);
   --link-default-color: black;
   --link-hover-color: rgb(24, 21, 21);
-  --accent-color: #ff9900;
+  --accent-color: #ffffff;
 }
 
 /* Navbar */
 .custom-navbar {
-  height: 80px;
-  background-color: #000000;
-  height: auto;
+  height: 70px;
+  background-color: #cb9a9a;
 }
 
 /* Logo */
@@ -50,7 +49,7 @@
 }
 
 .dropdown-category {
-  color: #471b1b !important ; /* Set your desired color */
+  color: #c68989 !important ; /* Set your desired color */
   /* Additional styles if needed */
 }
 .custom-nav-link:hover {

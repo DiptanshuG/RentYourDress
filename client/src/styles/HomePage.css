@@ -7,7 +7,7 @@
   position: relative;
   background-size: cover; /* Cover the entire container */
   background-position: center; /* Center the background image */
-  background-image: url(https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk1Mi1iYi0xMjEta2x4aDd1dXIuanBn.jpg);
+  /* background-image: url(https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk1Mi1iYi0xMjEta2x4aDd1dXIuanBn.jpg); */
 }
 .hero-section::before {
   content: "";
@@ -16,7 +16,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
+  background-color: rgba(233, 189, 208, 0.411); /* Adjust opacity as needed */
 }
 
 
@@ -24,8 +24,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%; /* Adjust as needed */
-  margin: 0 auto;
+  width: 100%; /* Adjust as needed */
+  margin: 20px auto 150px 20px;
 }
 
 /* Media query for screens below 762px */
@@ -37,7 +37,6 @@
   .text-container {
     margin: 10px; 
     width: 85vw;
-
   }
 
   .slider-container {
@@ -45,4 +44,23 @@
     max-width: none; 
     margin-top: 10px;/* Reset max-width for full width */
   }
+}
+
+.h2 {
+  text-shadow: 2px 2px 4px rgba(23, 21, 22, 0.999);
+  font-weight: bold;
+}
+
+.custom-p {
+  font-family: 'Dancing Script', cursive;
+}
+
+button.custom-button {
+  background-color: #cb9a9a;
+  border-color: #cb9a9a;
+  color: white;
+}
+
+.button.custom-button:hover {
+  background-color: #ec6464 !important; /* Change the color on hover */
 }
