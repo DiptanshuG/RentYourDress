@@ -11,8 +11,11 @@
 
 /* Navbar */
 .custom-navbar {
-  height: 70px;
-  background-color: #cb9a9a;
+  height: 70px !important;
+  background-color: #cb9a9a !important;
+  position: fixed !important;
+  width: 100vw !important;
+  z-index: 999 !important;
 }
 
 /* Logo */

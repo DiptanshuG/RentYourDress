@@ -2,6 +2,8 @@ import React from "react";
 import "../styles/HomePage.css";
 import ImageSlider from "../components/HomePage/ImageSlider";
 import { Button } from "react-bootstrap";
+import forHer from "../assets/images/her1.jpg";
+import forHim from "../assets/images/forhim.jpg";
 
 const HomePage = () => {
   return (
@@ -23,6 +25,19 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+      <section className="content-container"> 
+      <div className="image-container">
+      <div className="image-with-label">
+    <img src={forHer} alt="Image 1" className="aos-image" data-aos="slide-left" data-aos-duration="1500" />
+    <p class="image-label" data-aos-delay="1500">For Her</p>
+  </div>
+  <div className="image-with-label">
+    <img src={forHim} alt="Image 2" className="aos-image" data-aos="slide-right" data-aos-duration="1500" />
+    <p class="image-label" data-aos-delay="1500">For Him</p>
+  </div>
+</div>
+      </section>
+    
     </div>
   );
 };

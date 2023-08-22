@@ -1,13 +1,12 @@
 /* HomePage.css */
 .hero-section {
-  display: flex;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   position: relative;
   background-size: cover; /* Cover the entire container */
   background-position: center; /* Center the background image */
-  /* background-image: url(https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk1Mi1iYi0xMjEta2x4aDd1dXIuanBn.jpg); */
 }
 .hero-section::before {
   content: "";
@@ -25,7 +24,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%; /* Adjust as needed */
-  margin: 20px auto 150px 20px;
+  margin: 90px auto 150px 20px;
 }
 
 /* Media query for screens below 762px */
@@ -64,3 +63,43 @@ button.custom-button {
 .button.custom-button:hover {
   background-color: #ec6464 !important; /* Change the color on hover */
 }
+
+.image-container {
+  display: flex;
+  justify-content: space-between; /* Adjust as needed */
+  align-items: center; /* Adjust as needed */
+}
+
+.aos-image {
+  width: 600px; /* Adjust image width */
+  max-height: 500px; /* Adjust image height */
+}
+
+.image-with-label {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+  /* transition: transform 0.3s ease-in-out; Add a smooth transition effect */
+}
+
+/* .image-with-label:hover {
+  transform: scale(1.1); 
+} */
+
+.image-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+

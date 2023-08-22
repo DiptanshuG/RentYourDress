@@ -12,7 +12,7 @@ import "../../styles/ImageSlider.css";
 const ImageSlider = () => {
     return (
       <div className="slider-container">
-        <Carousel showArrows={false} showThumbs={false} autoPlay={true} interval={1000}  infiniteLoop={true}>
+        <Carousel showArrows={false} showThumbs={false} autoPlay={true} interval={1000}  infiniteLoop={true} showStatus={false}>
           <div className="slide">
             <img src={image1} alt="Slide 1" />
           </div>
