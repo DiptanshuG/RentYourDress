@@ -120,3 +120,10 @@ html, body {
   overflow-x: hidden;
 }
 
+.how-raa-works-section {
+  width: 100vw; /* Take full width of viewport */
+  height: 100vh; /* Take full height of viewport */
+  background-color: white; /* White background */
+  padding: 50px 0; /* Add some padding top and bottom */
+  /* Add more custom styles if needed */
+}
