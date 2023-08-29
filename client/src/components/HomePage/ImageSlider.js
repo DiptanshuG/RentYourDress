@@ -11,7 +11,7 @@ import "../../styles/ImageSlider.css";
 
 const ImageSlider = () => {
     return (
-      <div className="slider-container">
+      <div className="slider-container m-4">
         <Carousel showArrows={false} showThumbs={false} autoPlay={true} interval={1000}  infiniteLoop={true} showStatus={false}>
           <div className="slide">
             <img src={image1} alt="Slide 1" />

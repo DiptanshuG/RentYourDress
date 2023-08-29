@@ -14,16 +14,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; 
+  height: 100%;
 }
-
 
 .content-container1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100vw; /* Adjust as needed */
-  background-color: rgba(233, 189, 208, 0.411);
   height: 100vh;
 }
 
@@ -33,7 +31,6 @@
   align-items: center;
   width: 100%; /* Adjust as needed */
   margin: 90px 20px 150px 20px;
-  background-color: rgba(233, 189, 208, 0.411);
 }
 
 .content-container3 {
@@ -51,14 +48,14 @@
   }
 
   .text-container {
-    margin: 10px; 
+    margin: 10px;
     width: 85vw;
   }
 
   .slider-container {
     width: 87vw !important; /* Take full width in column layout */
-    max-width: none; 
-    margin-top: 10px;/* Reset max-width for full width */
+    max-width: none;
+    margin-top: 10px; /* Reset max-width for full width */
   }
 }
 
@@ -68,7 +65,7 @@
 }
 
 .custom-p {
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
 }
 
 button.custom-button {
@@ -116,7 +113,8 @@ button.custom-button {
   text-align: center;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
@@ -126,4 +124,12 @@ html, body {
   background-color: white; /* White background */
   padding: 50px 0; /* Add some padding top and bottom */
   /* Add more custom styles if needed */
+}
+
+.font-cursive-bold {
+  font-family: cursive;
+  font-weight: 900;
+}
+.primaryDarkColor {
+  color: #cb9a9a;
 }
