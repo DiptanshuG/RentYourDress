@@ -6,6 +6,7 @@ import forHer from "../assets/images/her1.jpg";
 import forHim from "../assets/images/forhim.jpg";
 import Thoughts from "../components/HomePage/Thoughts";
 import { Container, Row, Col } from 'react-bootstrap';
+import Footer from "../components/Footer";
 
 const HomePage = () => {
   const thoughsList = [
@@ -162,7 +163,7 @@ const HomePage = () => {
       </section>
 
 
-
+<Footer/>
     </div>
   );
 };
