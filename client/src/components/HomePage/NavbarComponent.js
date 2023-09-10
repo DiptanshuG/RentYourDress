@@ -4,6 +4,7 @@ import { FaUser, FaSearch, FaShoppingCart } from "react-icons/fa";
 import log from "../../assets/images/logo2.png";
 import Categories from "./Categories";
 import "../../styles/NavbarComponent.css";
+import Login from "../Sidebars/Login";
 
 const NavbarComponent = () => {
   const [isWomenDropdownOpen, setWomenDropdownOpen] = useState(false);
@@ -40,6 +41,11 @@ const NavbarComponent = () => {
     };
   }, []);
 
+  const [isLoginOpen, setLoginOpen] = useState(false); // State to control login visibility
+
+  const toggleLogin = () => {
+    setLoginOpen(!isLoginOpen);
+  };
 
   return (
     <Navbar variant="dark" expand="lg" className="custom-navbar">
@@ -77,7 +83,7 @@ const NavbarComponent = () => {
             <Nav.Link href="#">Customer Stories</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="#" className="mr-2 custom-nav-link">
+            <Nav.Link href="#" className="mr-2 custom-nav-link" onClick={toggleLogin}>
               <FaUser />
             </Nav.Link>
             <Nav.Link href="#" className="mr-2 custom-nav-link">
@@ -88,6 +94,8 @@ const NavbarComponent = () => {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
+        <Login isOpen={isLoginOpen} onClose={toggleLogin} />
+
       </Container>
     </Navbar>
   );

@@ -1,26 +1,31 @@
 import React from 'react';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import "../styles/HomePage.css";
 
 const Footer = () => {
   return (
     <footer
       style={{
         backgroundColor: '#cb9a9a',
-        color: 'white',
+        color: '#ffffff', // White text color
         padding: '40px 0',
       }}
     >
       <div className="container">
         <div className="row">
           <div className="col-md-4">
-            <h4>About Us</h4>
+            <h4 style={{ fontFamily: 'Arial, sans-serif', marginBottom: '20px' }}>
+              About Us
+            </h4>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
               in nisi vitae justo euismod blandit.
             </p>
           </div>
           <div className="col-md-4">
-            <h4>Contact Us</h4>
+            <h4 style={{ fontFamily: 'Arial, sans-serif', marginBottom: '20px' }}>
+              Contact Us
+            </h4>
             <p>
               Email: example@example.com
               <br />
@@ -28,24 +33,26 @@ const Footer = () => {
             </p>
           </div>
           <div className="col-md-4">
-            <h4>Follow Us</h4>
+            <h4 style={{ fontFamily: 'Arial, sans-serif', marginBottom: '20px' }}>
+              Follow Us
+            </h4>
             <div>
-              <a
-                href="#"
+              <a href='#'
+
                 className="social-icon"
                 title="Facebook"
               >
                 <FaFacebook />
               </a>
-              <a
-                href="#"
+              <a href='#'
+
                 className="social-icon"
                 title="Twitter"
               >
                 <FaTwitter />
               </a>
               <a
-                href="#"
+                href='#'
                 className="social-icon"
                 title="Instagram"
               >
