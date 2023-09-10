@@ -8,7 +8,7 @@ import "../../styles/ImageGrid.css";
 
 function ImageGrid() {
   return (
-      <div className="section">
+      <div className="section-image-grid">
         {/* left div with one images */}
         <div className="left-div-image">
           <img
