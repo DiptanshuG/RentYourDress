@@ -1,0 +1,32 @@
+/* Style for the main section */
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-right: 80px;
+    max-width: 100%;
+    margin-bottom: 100px;
+    justify-content: start;
+    height: 80vh;
+  }
+  
+  /* Style for the left div */
+  .left-div-image {
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+    background-color: white;
+  }
+  
+  /* Style for the right div */
+  .right-div-image {
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+  }
+  
+ /* Style for the individual images */
+.image {
+    margin: 10px; /* Add spacing between the images */
+  }
