@@ -1,21 +1,18 @@
 /* Style for the main section */
-.section {
+.section-image-grid {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 20px;
-    margin-right: 80px;
     max-width: 100%;
-    margin-bottom: 100px;
     justify-content: start;
-    height: 80vh;
+    margin: 51px;
   }
   
   /* Style for the left div */
   .left-div-image {
     display: flex;
     flex-wrap: wrap;
-    height: 400px;
+    height: 378px;
     background-color: white;
   }
   
