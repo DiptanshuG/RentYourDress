@@ -1,29 +1,48 @@
 /* Style for the main section */
 .section-image-grid {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    max-width: 100%;
-    justify-content: start;
-    margin: 51px;
-  }
-  
-  /* Style for the left div */
-  .left-div-image {
-    display: flex;
-    flex-wrap: wrap;
-    height: 378px;
-    background-color: white;
-  }
-  
-  /* Style for the right div */
-  .right-div-image {
-    display: flex;
-    flex-wrap: wrap;
-    height: 400px;
-  }
-  
- /* Style for the individual images */
+  display: flex;
+  justify-content: space-around;
+  margin: 51px;
+}
+
+/* Style for the left div */
+.left-div-image {
+  display: flex;
+  flex-wrap: wrap;
+  height: 400px;
+  width: 35%;
+  background-color: white;
+  overflow: hidden; /* Hide overflow for zoom effect */
+}
+
+.right-image-container{
+  overflow: hidden; /* Hide overflow for zoom effect */
+
+}
+
+/* Style for the right div */
+.right-div-image {
+  display: flex;
+  flex-wrap: wrap;
+  height: 400px;
+  width: 60%;
+  gap: 10px;
+  overflow: hidden; /* Hide overflow for zoom effect */
+
+}
+
+/* Style for the individual images */
 .image {
-    margin: 10px; /* Add spacing between the images */
-  }
+  margin: 10px; /* Add spacing between the images */
+  transition: transform 0.3s ease; /* Transition for the zoom effect */
+  width: auto; /* Allow original image width */
+  height: auto; /* Allow original image height */
+  max-width: 100%; /* Ensure image fits within its container */
+  max-height: 100%; /* Ensure image fits within its container */
+}
+
+.image:hover {
+  transform: scale(
+    1.05
+  ); /* Adjust the scale factor for the desired zoom level */
+}

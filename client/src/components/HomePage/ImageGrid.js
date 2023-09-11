@@ -5,52 +5,31 @@ import top from "../../assets/images/top.jpg";
 import bride from "../../assets/images/bride1.jpg";
 import men from "../../assets/images/menn.jpg";
 import "../../styles/ImageGrid.css";
+import ImageZoom from "../ImageZoom";
 
+const imageData = [
+  { src: bride, alt: "Image Description", width: 400, height: 200 },
+  { src: topRated, alt: "Image 3", width: 200, height: 200 },
+  { src: top, alt: "Image 4", width: 200, height: 200 },
+  { src: cocktail, alt: "Image 5", width: 400, height: 200 },
+];
 function ImageGrid() {
   return (
-      <div className="section-image-grid">
-        {/* left div with one images */}
-        <div className="left-div-image">
-          <img
-            src={men}
-            alt="Image 1"
-            width={400}
-            height={420}
-          />
-        </div>
-
-        {/* right div with four image */}
-        <div className="right-div-image">
-          <img
-            src={bride}
-            alt="Image 2"
-            className="image"
-            width={400}
-            height={200}
-          />
-          <img
-            src={topRated}
-            alt="Image 3"
-            className="image"
-            width={200}
-            height={200}
-          />
-          <img
-            src={top}
-            alt="Image 4"
-            className="image"
-            width={200}
-            height={200}
-          />
-          <img
-            src={cocktail}
-            alt="Image 5"
-            className="image"
-            width={400}
-            height={200}
-          />
-        </div>
+    <div className="section-image-grid">
+      <div className="left-div-image">
+        <ImageZoom
+          src={men}
+          alt="Image Description"
+        />
       </div>
+      <div className="right-div-image">
+        {imageData.map((image, index) => (
+          <div className="right-image-container">
+            <ImageZoom key={index} {...image} />
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 

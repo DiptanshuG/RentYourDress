@@ -1,0 +1,44 @@
+/* Style for the container */
+.image-zoom-container {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease; /* Slower transition for zoom effect */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Style for the image */
+.image-zoom {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio and cover container */
+  transition: transform 0.5s ease; /* Slower transition for zoom effect */
+}
+
+/* Style for the gradient overlay */
+.image-zoom-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4),
+    /* Start color (adjust the opacity as needed) */ transparent
+      /* End color (fully transparent) */
+  );
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Transition for gradient overlay */
+}
+
+/* Style when hovered */
+.image-zoom-container.hovered {
+  transform: scale(
+    1.05
+  ); /* Adjust the scale factor for the desired zoom level */
+}
+
+.image-zoom-container.hovered::before {
+  opacity: 1; /* Show the gradient overlay on hover */
+}
