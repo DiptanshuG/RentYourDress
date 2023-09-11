@@ -6,9 +6,9 @@
   flex-wrap: wrap;
 }
 
-.w-1/3 {
+/* .w-1/3 {
   width: 33.333333%;
-}
+} */
 
 .flex-col {
   flex-direction: column;
@@ -26,9 +26,9 @@
   height: 100vh;
 }
 
-.w-2/3 {
+/* .w-2/3 {
   width: 66.666667%;
-}
+} */
 
 .hidden {
   display: none;
@@ -56,9 +56,9 @@
 }
 
 /* Form styles */
-.w-10/12 {
+/* .w-10/12 {
   width: 83.333333%;
-}
+} */
 
 .outline {
   border: 2px solid #e2e8f0; /* Define your desired border color */
