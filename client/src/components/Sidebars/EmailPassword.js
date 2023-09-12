@@ -20,7 +20,7 @@ function EmailPassword({ email, setEmail, password, setPassword }) {
                     />
                   </Form.Group>
                   <Form.Group controlId="password">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label>Passwordd</Form.Label>
                     <Form.Control
                       type="password"
                       value={password}

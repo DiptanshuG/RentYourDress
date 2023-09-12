@@ -24,7 +24,7 @@ function ImageGrid() {
       </div>
       <div className="right-div-image">
         {imageData.map((image, index) => (
-          <div className="right-image-container">
+          <div className="right-image-container"  key={index}>
             <ImageZoom key={index} {...image} />
           </div>
         ))}
