@@ -81,3 +81,27 @@
     transform: scale(1.2);
   }
 }
+/* Add these styles to make the close button transparent with a hover effect */
+.search-close {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.search-close:hover {
+  color: #c68989; /* Change the color on hover to match your design */
+}
+
+/* Define the initial width and visibility properties for the search input */
+.search-input {
+  width: 0 !important;
+  visibility: hidden;
+  transition: width 0.5s ease, visibility 0.5s ease !important;
+}
+
+/* Define the expanded width when the input is open and make it visible */
+.search-input-open {
+  width: 200px !important; /* Adjust the width as needed */
+  visibility: visible;
+}
