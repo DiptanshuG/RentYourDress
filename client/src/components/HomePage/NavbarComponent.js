@@ -107,7 +107,6 @@ const NavbarComponent = () => {
             </button>
           </Form>
           <Nav>
-
             <Nav.Link href="#" className="mr-2 custom-nav-link" onClick={toggleLogin}>
               <FaUser />
             </Nav.Link>
