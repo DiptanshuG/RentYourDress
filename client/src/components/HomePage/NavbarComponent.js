@@ -4,15 +4,20 @@ import { FaUser, FaSearch, FaShoppingCart } from "react-icons/fa";
 import log from "../../assets/images/logo2.png";
 import Categories from "./Categories";
 import "../../styles/NavbarComponent.css";
-import Login from "../Sidebars/Login";
+import Account from "../Sidebars/Account";
 
 const NavbarComponent = () => {
   const [isWomenDropdownOpen, setWomenDropdownOpen] = useState(false);
   const [isMenDropdownOpen, setMenDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-
-  const occasionWear = ["Wedding", "Pre-Wedding Shoot", "Haldi", "Mehndi", "Sangeet"];
+  const occasionWear = [
+    "Wedding",
+    "Pre-Wedding Shoot",
+    "Haldi",
+    "Mehndi",
+    "Sangeet",
+  ];
 
   const womenItems = ["Bridal Lehenga", "Designer Lehenga", "Gown"];
   const menItems = ["Sherwani", "Suit", "Blazer", "Taxedo"];
@@ -42,9 +47,11 @@ const NavbarComponent = () => {
   }, []);
 
   const [isLoginOpen, setLoginOpen] = useState(false); // State to control login visibility
+  const [showSignUp, setShowSignUp] = useState(false); // state to control signup visibility
 
   const toggleLogin = () => {
     setLoginOpen(!isLoginOpen);
+    setShowSignUp(false);
   };
 
   return (
@@ -83,7 +90,11 @@ const NavbarComponent = () => {
             <Nav.Link href="#">Customer Stories</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="#" className="mr-2 custom-nav-link" onClick={toggleLogin}>
+            <Nav.Link
+              href="#"
+              className="mr-2 custom-nav-link"
+              onClick={toggleLogin}
+            >
               <FaUser />
             </Nav.Link>
             <Nav.Link href="#" className="mr-2 custom-nav-link">
@@ -94,8 +105,12 @@ const NavbarComponent = () => {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Login isOpen={isLoginOpen} onClose={toggleLogin} />
-
+        <Account
+          isOpen={isLoginOpen}
+          onClose={toggleLogin}
+          setShowSignUp={setShowSignUp}
+          showSignUp={showSignUp}
+        />
       </Container>
     </Navbar>
   );
