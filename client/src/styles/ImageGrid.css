@@ -43,6 +43,6 @@
 
 .image:hover {
   transform: scale(
-    1.05
+    2.05
   ); /* Adjust the scale factor for the desired zoom level */
 }
