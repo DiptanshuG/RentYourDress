@@ -73,12 +73,15 @@ const Login = ({ isOpen, onClose }) => {
 
                                     />
                                 </Form.Group>
-                                <Button variant="primary" type="submit" className="w-100 button-primary mt-4">
+                                <Button variant="primary" type="submit" className="w-100 button-primary mt-4 fw-bold">
                                     Login
                                 </Button>
 
+
                             </Form>
+                        
                         </div>
+
                     </div>
 
                 </div>
