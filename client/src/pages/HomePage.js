@@ -203,7 +203,7 @@ const HomePage = () => {
               data-aos="slide-left"
               data-aos-duration="1500"
             />
-            <p class="image-label" data-aos-delay="1500">
+            <p className="image-label" data-aos-delay="1500">
               For Her
             </p>
           </div>
@@ -215,7 +215,7 @@ const HomePage = () => {
               data-aos="slide-right"
               data-aos-duration="1500"
             />
-            <p class="image-label" data-aos-delay="1500">
+            <p className="image-label" data-aos-delay="1500">
               For Him
             </p>
           </div>
