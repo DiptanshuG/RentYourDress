@@ -1,0 +1,17 @@
+/* Webkit-based browsers (e.g., Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #cb9a9a; /* Replace with your desired color */
+    border-radius: 6px; /* Adjust the border radius as needed */
+    border: 2px solid white; /* Adjust the border color and width as needed */
+  }
+  
+  /* Firefox */
+  /* Set the width and color of the scrollbar track (background) */
+  /* Set the color of the scrollbar thumb (draggable part) */
+  scrollbar-width: thin;
+  scrollbar-color: #cb9a9a transparent; /* Replace with your desired color */
+  
