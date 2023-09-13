@@ -5,12 +5,16 @@ import log from "../../assets/images/logo2.png";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 import SignUpForm from "./SignUpForm";
 import LogInForm from "./LogInForm";
+import { FaPencilAlt } from "react-icons/fa"; // Import the pencil icon
+import "../../styles/ProfilePic.css"; // Import your custom CSS file
 
 const Account = ({ isOpen, onClose, setShowSignUp, showSignUp }) => {
+  const [profilePic, setProfilePic] = useState(null); // Store the selected profile picture
 
-  // Step 3: Event handler to toggle the state
-  const handleSignUpClick = () => {
-    setShowSignUp(!showSignUp);
+  // Function to handle profile picture selection
+  const handleProfilePicChange = (e) => {
+    const file = e.target.files[0];
+    setProfilePic(URL.createObjectURL(file));
   };
 
   return (
@@ -35,25 +39,39 @@ const Account = ({ isOpen, onClose, setShowSignUp, showSignUp }) => {
                     zIndex: -1, // Set z-index property
                   }}
                 />
+
+                {/* Profile picture input */}
+                {showSignUp && (
+                  <label
+                    htmlFor="profile-pic-input"
+                    className="profile-pic-container"
+                  >
+                    <div className="profile-pic">
+                      {profilePic ? (
+                        <img src={profilePic} alt="Profile" />
+                      ) : (
+                        <div className="default-profile-pic">
+                          <FaPencilAlt className="pencil-icon" />
+                          <span>Upload Picture</span>
+                        </div>
+                      )}
+                    </div>
+                    <input
+                      type="file"
+                      id="profile-pic-input"
+                      accept="image/*"
+                      onChange={handleProfilePicChange}
+                      style={{ display: "none" }}
+                    />
+                  </label>
+                )}
+
                 <h1 className="text-2xl textColor font-bold mb-1">Welcome</h1>
                 <p className="font-bold mb-4 mutedColor">
                   Discover the perfect attire to make every moment memorable.
                 </p>
-                {showSignUp && <SignUpForm />}
-                {!showSignUp && <LogInForm />}
-                {!showSignUp && (             
-                  <div className="text-center">
-                    <p>
-                      Don't have an account?{" "}
-                      <button
-                        onClick={handleSignUpClick}
-                        className="text-decoration-none text-dark"
-                      >
-                        <b>Sign Up.</b>
-                      </button>
-                    </p>
-                  </div>
-                )}
+                {showSignUp && <SignUpForm setShowSignUp={setShowSignUp} />}
+                {!showSignUp && <LogInForm setShowSignUp={setShowSignUp} />}
               </div>
             </div>
           </div>
