@@ -2,14 +2,18 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import EmailPassword from "./EmailPassword";
 
-function LogInForm() {
-    const [loginEmail, setLoginEmail] = useState("");
-    const [loginPassword, setLoginPassword] = useState("");
-    
-    const submitLoginHandler = (e) => {
-        e.preventDefault();
-      };
-    
+function LogInForm({ setShowSignUp }) {
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+
+  const submitLoginHandler = (e) => {
+    e.preventDefault();
+  };
+
+  const handleSignUpClick = () => {
+    setShowSignUp(true);
+  };
+
   return (
     <>
       <Form
@@ -30,6 +34,27 @@ function LogInForm() {
         >
           Login
         </Button>
+        <p>
+          By continuing, you agree to RYD's Conditions of Use and Privacy
+          Notice.
+        </p>
+        <div className="text-center mt-4">
+          <div className="d-flex justify-content-center align-items-center">
+            <hr className="flex-grow-1" />
+            <p className="mx-2 mb-0">
+              <b>Don't have an account?</b>
+            </p>
+            <hr className="flex-grow-1" />
+          </div>
+          <Button
+            variant="secondary"
+            type="submit"
+            className="w-100 mt-2"
+            onClick={handleSignUpClick}
+          >
+            Sign Up
+          </Button>
+        </div>
       </Form>
     </>
   );
