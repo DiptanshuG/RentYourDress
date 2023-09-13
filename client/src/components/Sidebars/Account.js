@@ -66,10 +66,12 @@ const Account = ({ isOpen, onClose, setShowSignUp, showSignUp }) => {
                   </label>
                 )}
 
-                <h1 className="text-2xl textColor font-bold mb-1">Welcome</h1>
-                <p className="font-bold mb-4 mutedColor">
-                  Discover the perfect attire to make every moment memorable.
-                </p>
+                <div>
+                  <h1 className="text-2xl textColor font-bold mb-1">Welcome</h1>
+                  <p className="font-bold mb-4 mutedColor">
+                    Discover the perfect attire to make every moment memorable.
+                  </p>
+                </div>
                 {showSignUp && <SignUpForm setShowSignUp={setShowSignUp} />}
                 {!showSignUp && <LogInForm setShowSignUp={setShowSignUp} />}
               </div>
