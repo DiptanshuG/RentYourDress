@@ -20,10 +20,11 @@ const Account = ({ isOpen, onClose, setShowSignUp, showSignUp }) => {
   return (
     <>
       <div className={`login-container ${isOpen ? "open" : ""}`}>
+        <button className="close-button" onClick={onClose}>
+          &times;
+        </button>
         <div className="login-form">
-          <button className="close-button" onClick={onClose}>
-            &times;
-          </button>
+
           <div className="flex flex-wrap">
             <div className="w-full md:w-1/3">
               <div className="flex flex-col justify-center items-center h-screen">
@@ -66,14 +67,16 @@ const Account = ({ isOpen, onClose, setShowSignUp, showSignUp }) => {
                   </label>
                 )}
 
-                <div>
-                  <h1 className="text-2xl textColor font-bold mb-1">Welcome</h1>
-                  <p className="font-bold mb-4 mutedColor">
-                    Discover the perfect attire to make every moment memorable.
-                  </p>
+                <div >
+                  <div>
+                    <h1 className="text-2xl textColor font-bold mb-1">Welcome</h1>
+                    <p className="font-bold mb-4 mutedColor">
+                      Discover the perfect attire to make every moment memorable.
+                    </p>
+                  </div>
+                  {showSignUp && <SignUpForm setShowSignUp={setShowSignUp} />}
+                  {!showSignUp && <LogInForm setShowSignUp={setShowSignUp} />}
                 </div>
-                {showSignUp && <SignUpForm setShowSignUp={setShowSignUp} />}
-                {!showSignUp && <LogInForm setShowSignUp={setShowSignUp} />}
               </div>
             </div>
           </div>
