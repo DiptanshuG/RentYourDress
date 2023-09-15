@@ -25,14 +25,14 @@ function ContactUs({ onClose, setShowContactUsModal, showContactUsModal }) {
     color: 'blue', // Set the color to blue
   };
 
+  const modalContent = {
+    display: 'flex',
+    justifyContent: 'space-around'
+  }
+
   return (
-    <div>
-      <Modal show={showContactUsModal} onHide={closeModal}>
-        {/* <Modal.Header closeButton>
-          <Modal.Title>Contact Options</Modal.Title>
-        </Modal.Header> */}
-        <Modal.Body>
-          <div style={linkContainerStyle}>
+      <Modal show={showContactUsModal} onHide={closeModal} centered size='sm' >
+        <Modal.Body style={modalContent}> 
             <Link
               to="https://wa.me/7582974834"
               target="_blank"
@@ -47,15 +47,8 @@ function ContactUs({ onClose, setShowContactUsModal, showContactUsModal }) {
             <Link to="mailto:yashijain0312@gmail.com" className="text-decoration-none text-dark">
               <FaEnvelope /> Mail
             </Link>
-          </div>
         </Modal.Body>
-        {/* <Modal.Footer>
-          <Button variant="secondary" onClick={closeModal}>
-            Close
-          </Button>
-        </Modal.Footer> */}
       </Modal>
-    </div>
   );
 }
 
