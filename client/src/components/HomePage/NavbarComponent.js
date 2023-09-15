@@ -63,7 +63,7 @@ const NavbarComponent = () => {
   return (
     <Navbar variant="dark" expand="lg" className="custom-navbar">
       <Container>
-        <Navbar.Brand href="#" className="mr-auto">
+        <Navbar.Brand href="/" className="mr-auto">
           <img
             src={log}
             width="50"
@@ -93,7 +93,7 @@ const NavbarComponent = () => {
               show={isMenDropdownOpen}
               ref={dropdownRef}
             />
-            <Nav.Link href="#">Customer Stories</Nav.Link>
+            <Nav.Link href="/customer-stories">Customer Stories</Nav.Link>
           </Nav>
           <Form inline className="ml-3 d-flex search-form">
             <div className="d-flex justify-content-start">

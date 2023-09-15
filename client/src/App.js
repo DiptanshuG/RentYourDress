@@ -8,18 +8,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import "./styles/scrollbar.css"
+import CustomerStories from './pages/CustomerStories';
 
 const App = () => {
   AOS.init();
 
   return (
     <Router>
-          <Layout>
+      <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/customer-stories" element={<CustomerStories />} />
           {/* <Route component={NotFound} /> */}
         </Routes>
-        </Layout>
+      </Layout>
     </Router>
   );
 };

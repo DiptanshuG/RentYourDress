@@ -259,7 +259,7 @@ const HomePage = () => {
       {/* images section  */}
       <ImageGrid />
 
-      <Footer />
+
     </div >
   );
 };
