@@ -1,63 +1,82 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CustomerStoryCard from '../components/CustomerStory/CustomerStoryCard';
+import BadgeButton from '../components/BadgeButton';
+import CustomerStoryModal from '../components/CustomerStory/CustomersStoryModal';
 
+const dummydata = [
+    {
+        imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg',
+        story: "Loved the designer red peplum style outfit I wore for a friend's wedding. Heavy on style and low on budget is what impressed me a lot. Rent An Attire is the perfect solution to your everyday function wear problem. Great concept and quality Team!!",
+        customerName: 'Gungun Uprari (TV Actress)',
+    },
+    {
+        imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
+        story: "I had a fantastic experience with Rent An Attire. Their collection is amazing, and the service is top-notch. I highly recommend them to everyone looking for stylish outfits.",
+        customerName: 'John Doe',
+    },
+    {
+        imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
+        story: "Rent An Attire saved my day! I found the perfect dress for a special occasion, and it fit like a dream. Plus, their prices are unbeatable. Thank you!",
+        customerName: 'Jane Smith',
+    },
+    {
+        imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
+        story: "I've been a loyal customer of Rent An Attire for years. Their quality and variety never disappoint. It's my go-to place for all my outfit needs.",
+        customerName: 'David Johnson',
+    },
+    {
+        imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
+        story: "I've been a loyal customer of Rent An Attire for years. Their quality and variety never disappoint. It's my go-to place for all my outfit needs.",
+        customerName: 'David Johnson',
+    }, {
+        imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
+        story: "I've been a loyal customer of Rent An Attire for years. Their quality and variety never disappoint. It's my go-to place for all my outfit needs.",
+        customerName: 'David Johnson',
+    }, {
+        imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
+        story: "I've been a loyal customer of Rent An Attire for years. Their quality and variety never disappoint. It's my go-to place for all my outfit needs.",
+        customerName: 'David Johnson',
+    }, {
+        imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
+        story: "I've been a loyal customer of Rent An Attire for years. Their quality and variety never disappoint. It's my go-to place for all my outfit needs.",
+        customerName: 'David Johnson',
+    }, {
+        imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
+        story: "I've been a loyal customer of Rent An Attire for years. Their quality and variety never disappoint. It's my go-to place for all my outfit needs.",
+        customerName: 'David Johnson',
+    }, {
+        imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
+        story: "I've been a loyal customer of Rent An Attire for years. Their quality and variety never disappoint. It's my go-to place for all my outfit needs.",
+        customerName: 'David Johnson',
+    }, {
+        imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
+        story: "I've been a loyal customer of Rent An Attire for years. Their quality and variety never disappoint. It's my go-to place for all my outfit needs.",
+        customerName: 'David Johnson',
+    }, {
+        imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
+        story: "I've been a loyal customer of Rent An Attire for years. Their quality and variety never disappoint. It's my go-to place for all my outfit needs.",
+        customerName: 'David Johnson',
+    },
+    // Add more customer stories here as needed
+];
 const CustomerStories = () => {
-    const customerStories = [
-        {
-            imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg',
-            story: "Loved the designer red peplum style outfit I wore for a friend's wedding. Heavy on style and low on budget is what impressed me a lot. Rent An Attire is the perfect solution to your everyday function wear problem. Great concept and quality Team!!",
-            customerName: 'Gungun Uprari (TV Actress)',
-        },
-        {
-            imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
-            story: "I had a fantastic experience with Rent An Attire. Their collection is amazing, and the service is top-notch. I highly recommend them to everyone looking for stylish outfits.",
-            customerName: 'John Doe',
-        },
-        {
-            imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
-            story: "Rent An Attire saved my day! I found the perfect dress for a special occasion, and it fit like a dream. Plus, their prices are unbeatable. Thank you!",
-            customerName: 'Jane Smith',
-        },
-        {
-            imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
-            story: "I've been a loyal customer of Rent An Attire for years. Their quality and variety never disappoint. It's my go-to place for all my outfit needs.",
-            customerName: 'David Johnson',
-        },
-        {
-            imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
-            story: "I've been a loyal customer of Rent An Attire for years. Their quality and variety never disappoint. It's my go-to place for all my outfit needs.",
-            customerName: 'David Johnson',
-        }, {
-            imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
-            story: "I've been a loyal customer of Rent An Attire for years. Their quality and variety never disappoint. It's my go-to place for all my outfit needs.",
-            customerName: 'David Johnson',
-        }, {
-            imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
-            story: "I've been a loyal customer of Rent An Attire for years. Their quality and variety never disappoint. It's my go-to place for all my outfit needs.",
-            customerName: 'David Johnson',
-        }, {
-            imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
-            story: "I've been a loyal customer of Rent An Attire for years. Their quality and variety never disappoint. It's my go-to place for all my outfit needs.",
-            customerName: 'David Johnson',
-        }, {
-            imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
-            story: "I've been a loyal customer of Rent An Attire for years. Their quality and variety never disappoint. It's my go-to place for all my outfit needs.",
-            customerName: 'David Johnson',
-        }, {
-            imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
-            story: "I've been a loyal customer of Rent An Attire for years. Their quality and variety never disappoint. It's my go-to place for all my outfit needs.",
-            customerName: 'David Johnson',
-        }, {
-            imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
-            story: "I've been a loyal customer of Rent An Attire for years. Their quality and variety never disappoint. It's my go-to place for all my outfit needs.",
-            customerName: 'David Johnson',
-        }, {
-            imageSrc: 'https://www.rentanattire.com//uploaded_files/site/9dd4935ad0cbc9452eded3f5dceb57e7.jpg', // Replace with your image URL
-            story: "I've been a loyal customer of Rent An Attire for years. Their quality and variety never disappoint. It's my go-to place for all my outfit needs.",
-            customerName: 'David Johnson',
-        },
-        // Add more customer stories here as needed
-    ];
+    const [showModal, setShowModal] = useState(false);
+    const [customerStories, setCustomerStories] = useState(dummydata);
+
+
+    const handleButtonClick = () => {
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
+
+    const addCustomerStory = (newStory) => {
+        setCustomerStories([...customerStories, newStory]);
+    };
+
+
 
     const containerStyle = {
         position: 'relative',
@@ -97,9 +116,11 @@ const CustomerStories = () => {
                 <div style={textStyle}>
                     <h1>Customer Stories...♡</h1>
                 </div>
-
-
             </div>
+
+            <BadgeButton text="Share Your Story" color="#cb9a9a" onClick={handleButtonClick} />
+
+
             <div className="row m-5">
                 {customerStories.map((story, index) => (
                     <div className="col-md-3 my-2" key={index}>
@@ -107,6 +128,11 @@ const CustomerStories = () => {
                     </div>
                 ))}
             </div>
+            <CustomerStoryModal
+                show={showModal}
+                handleClose={handleCloseModal}
+                addCustomerStory={addCustomerStory}
+            />
         </div>
     );
 };
