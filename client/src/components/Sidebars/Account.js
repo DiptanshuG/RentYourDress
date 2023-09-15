@@ -7,9 +7,16 @@ import SignUpForm from "./SignUpForm";
 import LogInForm from "./LogInForm";
 import { FaPencilAlt } from "react-icons/fa"; // Import the pencil icon
 import "../../styles/ProfilePic.css"; // Import your custom CSS file
+import ContactUs from "./ContactUs";
+import { Link } from 'react-router-dom';
 
 const Account = ({ isOpen, onClose, setShowSignUp, showSignUp }) => {
   const [profilePic, setProfilePic] = useState(null); // Store the selected profile picture
+  const [showContactUsModal, setShowContactUsModal] = useState(false);
+
+  const openContactUsModal = () => {
+    setShowContactUsModal(true);
+  };
 
   // Function to handle profile picture selection
   const handleProfilePicChange = (e) => {
@@ -24,7 +31,6 @@ const Account = ({ isOpen, onClose, setShowSignUp, showSignUp }) => {
           &times;
         </button>
         <div className="login-form">
-
           <div className="flex flex-wrap">
             <div className="w-full md:w-1/3">
               <div className="flex flex-col justify-center items-center h-screen">
@@ -67,12 +73,28 @@ const Account = ({ isOpen, onClose, setShowSignUp, showSignUp }) => {
                   </label>
                 )}
 
-                <div >
+                <div>
                   <div>
-                    <h1 className="text-2xl textColor font-bold mb-1">Welcome</h1>
+                    <h1 className="text-2xl textColor font-bold mb-1">
+                      Welcome
+                    </h1>
                     <p className="font-bold mb-4 mutedColor">
-                      Discover the perfect attire to make every moment memorable.
+                      Discover the perfect attire to make every moment
+                      memorable.
                     </p>
+                    {showSignUp && (
+                      <p>
+                        <b>Want to become a seller?</b>&nbsp;
+                        <Link className="text-decoration-none text-blue" onClick={openContactUsModal}>Contact Us</Link>
+                      </p>
+                    )}
+                    {showContactUsModal && (
+                      <ContactUs
+                        onClose={() => setShowContactUsModal(false)}
+                        setShowContactUsModal={setShowContactUsModal}
+                        showContactUsModal={showContactUsModal}
+                      />
+                    )}
                   </div>
                   {showSignUp && <SignUpForm setShowSignUp={setShowSignUp} />}
                   {!showSignUp && <LogInForm setShowSignUp={setShowSignUp} />}
